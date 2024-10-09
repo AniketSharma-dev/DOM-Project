@@ -1,14 +1,20 @@
-var add = document.querySelector(".friend button");
-var type = document.querySelector(".type p");
+var istatus = document.querySelector("p");
+var button = document.querySelector(".add");
 
 var flag = 0;
 
-add.addEventListener("click", function () {
+button.addEventListener("click", function () {
   if (flag == 0) {
-    type.textContent = "Friend";
-    flag += 1;
+    istatus.innerHTML = "Friends";
+    istatus.style.color = "green";
+    button.innerHTML = "Remove";
+    button.style.backgroundColor = "red";
+    flag = 1;
   } else {
-    type.textContent = "Stranger";
-    flag += 0;
+    istatus.innerHTML = "Stranger";
+    istatus.style.color = "red";
+    button.innerHTML = "Add Friend";
+    button.style.backgroundColor = "Green";
+    flag = 0;
   }
 });
