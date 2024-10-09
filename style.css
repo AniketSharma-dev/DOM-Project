@@ -96,11 +96,14 @@ body {
 }
 
 i {
-    font-size: 8rem;
+    color: red;
+    font-size: 78px;
     margin-top: 20px;
     margin-right: 3px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform ease 0.5s;
 }

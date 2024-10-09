@@ -21,13 +21,22 @@ function addFriend() {
   });
 }
 
-var update = document.querySelector(".update");
-var heart = document.querySelector("i");
+function heart() {
+  var update = document.querySelector(".update");
+  var heart = document.querySelector("i");
 
-update.addEventListener("dblclick", function () {
-  console.log("hell");
+  update.addEventListener("dblclick", function () {
+    heart.style.transform = "translate(-50%, -50%) scale(2)";
+    heart.style.opacity = 0.9;
 
-  heart.style.transform = ;
-});
+    setTimeout(() => {
+      heart.style.opacity = 0;
+    }, 1550);
+    setTimeout(() => {
+      heart.style.transform = "translate(-50%, -50%) scale(0)";
+    }, 1500);
+  });
+}
 
+heart();
 addFriend();
