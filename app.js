@@ -38,5 +38,14 @@ function heart() {
   });
 }
 
+var main = document.querySelector("body");
+var crsr = document.querySelector(".cursor");
+
+main.addEventListener("mousemove", (e) => {
+  console.log(e);
+  crsr.style.left = e.pageX + "px";
+  crsr.style.top = e.pageY + "px";
+});
+
 heart();
 addFriend();
