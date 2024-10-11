@@ -58,17 +58,22 @@ function customCursor() {
 }
 
 function elements() {
-  var elem = document.querySelectorAll(".elem");
+  var elem = document.querySelectorAll(".elem"); // getting elems as nodelsit from
 
   elem.forEach(function (val) {
+    // using foreach because it run till the loop did'nt finish
+    // console.log(val.children); // output :- 0 : h1, 1 : img, length : 2
+    // console.log(val.childNodes); // output :-  0 : text, 1 : h1, 2 : text, 3 : img, 4 : text, length : 5
+
     val.addEventListener("mousemove", function (e) {
-      val.childNodes[3].style.left = e.x + "px";
+      // val.childNodes return a list of child node with empty text node and its alternative is chidrens which return only is childs
+      val.childNodes[3].style.left = e.x + "px"; // for image follow mouse cursor
     });
     val.addEventListener("mouseenter", function () {
-      val.childNodes[3].style.opacity = 1;
+      val.childNodes[3].style.opacity = 1; // setting image opacity to 1 by default set to 0
     });
     val.addEventListener("mouseleave", function () {
-      val.childNodes[3].style.opacity = 0;
+      val.childNodes[3].style.opacity = 0; // on leave setting opacity of image to 0
     });
   });
 }
