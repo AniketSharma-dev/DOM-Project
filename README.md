@@ -21,7 +21,7 @@ This project demonstrates the use of dynamic DOM manipulation and interactive fe
 - **Functionality**: A scrollable circular section showcases profile images, simulating Instagram-style stories. Clicking on an image expands it to full screen, mimicking the story-viewing functionality.
 
 ## Demo
-You can view the demo by opening the `index.html` file in any modern web browser.
+You can view the demo by opening the `[index.html](https://aniketsharma-dev.github.io/DOM-Project/)` file in any modern web browser.
 
 ## Technologies Used
 - HTML5
