@@ -57,34 +57,23 @@ function customCursor() {
   });
 }
 
-var elem = document.querySelectorAll(".elem");
+function elements() {
+  var elem = document.querySelectorAll(".elem");
 
-elem.forEach(function (val) {
-  val.addEventListener("mousemove", function (e) {
-    val.childNodes[3].style.left = e.x + "px";
+  elem.forEach(function (val) {
+    val.addEventListener("mousemove", function (e) {
+      val.childNodes[3].style.left = e.x + "px";
+    });
+    val.addEventListener("mouseenter", function () {
+      val.childNodes[3].style.opacity = 1;
+    });
+    val.addEventListener("mouseleave", function () {
+      val.childNodes[3].style.opacity = 0;
+    });
   });
-  val.addEventListener("mouseenter", function () {
-    val.childNodes[3].style.opacity = 1;
-  });
-  val.addEventListener("mouseleave", function () {
-    val.childNodes[3].style.opacity = 0;
-  });
-});
+}
 
-// var elem = document.querySelector(".elem");
-// var image = document.querySelector(".img");
-
-// elem.addEventListener("mousemove", function (e) {
-//   console.log(e);
-
-//   image.style.left = e.x + "px";
-//   image.style.top = e.y + "px";
-//   image.style.opacity = 1;
-// });
-// elem.addEventListener("mouseleave", function () {
-//   image.style.opacity = 0;
-// });
-
-// customCursor();
+elements();
+customCursor();
 heart();
 addFriend();
