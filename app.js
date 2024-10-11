@@ -61,7 +61,7 @@ function elements() {
   var elem = document.querySelectorAll(".elem"); // getting elems as nodelsit from
 
   elem.forEach(function (val) {
-    // using foreach because it run till the loop did'nt finish
+    // using foreach because it run till the size of array or the list
     // console.log(val.children); // output :- 0 : h1, 1 : img, length : 2
     // console.log(val.childNodes); // output :-  0 : text, 1 : h1, 2 : text, 3 : img, 4 : text, length : 5
 
@@ -77,6 +77,55 @@ function elements() {
     });
   });
 }
+
+var arr = [
+  {
+    name: "Emma",
+    dp: "https://images.unsplash.com/photo-1528962728833-5106fc29b9c8?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    story:
+      "https://images.unsplash.com/photo-1727731481816-bf055858e20f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "Olivia",
+    dp: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    story:
+      "https://images.unsplash.com/photo-1533618561606-3b2a0766d159?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "Ava",
+    dp: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=1727&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    story:
+      "https://plus.unsplash.com/premium_photo-1664046912334-134dbd487444?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "Sophia",
+    dp: "https://images.unsplash.com/photo-1482555670981-4de159d8553b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    story:
+      "https://images.unsplash.com/photo-1527285286036-1ae743926077?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "Isabella",
+    dp: "https://images.unsplash.com/photo-1512310604669-443f26c35f52?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    story:
+      "https://images.unsplash.com/photo-1698620625458-340dba2af9ea?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+];
+
+var storySection = document.querySelector(".main-screen");
+var cluster = "";
+
+arr.forEach(function (e, index) {
+  cluster += ` <div class="story">
+    <img id="${index}" src="${e.dp}" alt="${e.name}">
+  </div>`;
+});
+
+storySection.innerHTML = cluster;
+
+storySection.addEventListener("click", function(e){
+  console.log(e.target);
+  
+})
 
 elements();
 customCursor();
