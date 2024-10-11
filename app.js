@@ -42,9 +42,19 @@ var main = document.querySelector("body");
 var crsr = document.querySelector(".cursor");
 
 main.addEventListener("mousemove", (e) => {
-  console.log(e);
-  crsr.style.left = e.pageX + "px";
-  crsr.style.top = e.pageY + "px";
+  crsr.style.left = e.clientX + "px";
+  crsr.style.top = e.clientY + "px";
+
+
+
+  /* pageX and pageY use for page event like it only follow page area but in client it follow client screen  */
+  // crsr.style.left = e.pageX + "px";
+  // crsr.style.top = e.pageY + "px";
+});
+
+window.addEventListener("load", () => {
+  crsr.style.left = "-50px"; // Hide the cursor initially off-screen
+  crsr.style.top = "-50px";
 });
 
 heart();
